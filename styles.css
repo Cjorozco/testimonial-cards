@@ -1,0 +1,106 @@
+/* Basic Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transitions */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  /* Move card up on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  /* Increase shadow on hover */
+}
+
+/* Testimonial Content */
+.testimonial-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial-user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-user h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.testimonial-user p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Carousel functionality for smaller screens */
+@media screen and (max-width: 768px) {
+  .testimonial-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* Enable carousel-style snap scrolling */
+  }
+
+  .testimonial-card {
+    scroll-snap-align: center;
+    /* Cards will snap to center of view */
+    margin-right: 20px;
+    /* Adds some spacing between cards */
+  }
+
+  .testimonial-card:last-child {
+    margin-right: 0;
+    /* No margin for the last item */
+  }
+}
